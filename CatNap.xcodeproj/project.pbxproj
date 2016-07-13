@@ -19,6 +19,7 @@
 		C49989831D35D1280056DB6D /* mrreow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C499897E1D35D1280056DB6D /* mrreow.mp3 */; };
 		C49989841D35D1280056DB6D /* pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C499897F1D35D1280056DB6D /* pop.mp3 */; };
 		C49989851D35D1280056DB6D /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C49989801D35D1280056DB6D /* win.mp3 */; };
+		C499898A1D35E95E0056DB6D /* Cat.sks in Resources */ = {isa = PBXBuildFile; fileRef = C49989891D35E95E0056DB6D /* Cat.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C499897E1D35D1280056DB6D /* mrreow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = mrreow.mp3; path = CatNap/Resources/Sounds/mrreow.mp3; sourceTree = "<group>"; };
 		C499897F1D35D1280056DB6D /* pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pop.mp3; path = CatNap/Resources/Sounds/pop.mp3; sourceTree = "<group>"; };
 		C49989801D35D1280056DB6D /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = win.mp3; path = CatNap/Resources/Sounds/win.mp3; sourceTree = "<group>"; };
+		C49989891D35E95E0056DB6D /* Cat.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cat.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +70,8 @@
 		C49989611D35CDAF0056DB6D /* CatNap */ = {
 			isa = PBXGroup;
 			children = (
+				C49989881D35E9400056DB6D /* Scenes */,
 				C49989621D35CDAF0056DB6D /* AppDelegate.swift */,
-				C49989641D35CDAF0056DB6D /* GameScene.sks */,
 				C49989661D35CDAF0056DB6D /* GameScene.swift */,
 				C49989681D35CDAF0056DB6D /* GameViewController.swift */,
 				C499896A1D35CDAF0056DB6D /* Main.storyboard */,
@@ -100,6 +102,15 @@
 				C49989801D35D1280056DB6D /* win.mp3 */,
 			);
 			name = Sounds;
+			sourceTree = "<group>";
+		};
+		C49989881D35E9400056DB6D /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				C49989641D35CDAF0056DB6D /* GameScene.sks */,
+				C49989891D35E95E0056DB6D /* Cat.sks */,
+			);
+			name = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +172,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C499898A1D35E95E0056DB6D /* Cat.sks in Resources */,
 				C49989851D35D1280056DB6D /* win.mp3 in Resources */,
 				C49989651D35CDAF0056DB6D /* GameScene.sks in Resources */,
 				C49989711D35CDAF0056DB6D /* LaunchScreen.storyboard in Resources */,
