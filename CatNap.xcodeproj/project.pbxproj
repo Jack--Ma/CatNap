@@ -12,8 +12,13 @@
 		C49989671D35CDAF0056DB6D /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49989661D35CDAF0056DB6D /* GameScene.swift */; };
 		C49989691D35CDAF0056DB6D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49989681D35CDAF0056DB6D /* GameViewController.swift */; };
 		C499896C1D35CDAF0056DB6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C499896A1D35CDAF0056DB6D /* Main.storyboard */; };
-		C499896E1D35CDAF0056DB6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C499896D1D35CDAF0056DB6D /* Assets.xcassets */; };
 		C49989711D35CDAF0056DB6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C499896F1D35CDAF0056DB6D /* LaunchScreen.storyboard */; };
+		C49989791D35D0A20056DB6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C49989781D35D0A20056DB6D /* Assets.xcassets */; };
+		C49989811D35D1280056DB6D /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C499897C1D35D1280056DB6D /* backgroundMusic.mp3 */; };
+		C49989821D35D1280056DB6D /* lose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C499897D1D35D1280056DB6D /* lose.mp3 */; };
+		C49989831D35D1280056DB6D /* mrreow.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C499897E1D35D1280056DB6D /* mrreow.mp3 */; };
+		C49989841D35D1280056DB6D /* pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C499897F1D35D1280056DB6D /* pop.mp3 */; };
+		C49989851D35D1280056DB6D /* win.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = C49989801D35D1280056DB6D /* win.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +28,14 @@
 		C49989661D35CDAF0056DB6D /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		C49989681D35CDAF0056DB6D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		C499896B1D35CDAF0056DB6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C499896D1D35CDAF0056DB6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C49989701D35CDAF0056DB6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C49989721D35CDAF0056DB6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C49989781D35D0A20056DB6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C499897C1D35D1280056DB6D /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = backgroundMusic.mp3; path = CatNap/Resources/Sounds/backgroundMusic.mp3; sourceTree = "<group>"; };
+		C499897D1D35D1280056DB6D /* lose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = lose.mp3; path = CatNap/Resources/Sounds/lose.mp3; sourceTree = "<group>"; };
+		C499897E1D35D1280056DB6D /* mrreow.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = mrreow.mp3; path = CatNap/Resources/Sounds/mrreow.mp3; sourceTree = "<group>"; };
+		C499897F1D35D1280056DB6D /* pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pop.mp3; path = CatNap/Resources/Sounds/pop.mp3; sourceTree = "<group>"; };
+		C49989801D35D1280056DB6D /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = win.mp3; path = CatNap/Resources/Sounds/win.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,11 +73,33 @@
 				C49989661D35CDAF0056DB6D /* GameScene.swift */,
 				C49989681D35CDAF0056DB6D /* GameViewController.swift */,
 				C499896A1D35CDAF0056DB6D /* Main.storyboard */,
-				C499896D1D35CDAF0056DB6D /* Assets.xcassets */,
 				C499896F1D35CDAF0056DB6D /* LaunchScreen.storyboard */,
+				C49989781D35D0A20056DB6D /* Assets.xcassets */,
+				C499897A1D35D0CD0056DB6D /* Resources */,
 				C49989721D35CDAF0056DB6D /* Info.plist */,
 			);
 			path = CatNap;
+			sourceTree = "<group>";
+		};
+		C499897A1D35D0CD0056DB6D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C499897B1D35D0D90056DB6D /* Sounds */,
+			);
+			name = Resources;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		C499897B1D35D0D90056DB6D /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				C499897C1D35D1280056DB6D /* backgroundMusic.mp3 */,
+				C499897D1D35D1280056DB6D /* lose.mp3 */,
+				C499897E1D35D1280056DB6D /* mrreow.mp3 */,
+				C499897F1D35D1280056DB6D /* pop.mp3 */,
+				C49989801D35D1280056DB6D /* win.mp3 */,
+			);
+			name = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,10 +161,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C49989851D35D1280056DB6D /* win.mp3 in Resources */,
 				C49989651D35CDAF0056DB6D /* GameScene.sks in Resources */,
 				C49989711D35CDAF0056DB6D /* LaunchScreen.storyboard in Resources */,
-				C499896E1D35CDAF0056DB6D /* Assets.xcassets in Resources */,
+				C49989791D35D0A20056DB6D /* Assets.xcassets in Resources */,
+				C49989811D35D1280056DB6D /* backgroundMusic.mp3 in Resources */,
+				C49989841D35D1280056DB6D /* pop.mp3 in Resources */,
+				C49989831D35D1280056DB6D /* mrreow.mp3 in Resources */,
 				C499896C1D35CDAF0056DB6D /* Main.storyboard in Resources */,
+				C49989821D35D1280056DB6D /* lose.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +301,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qq100858433.CatNap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -275,6 +313,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = qq100858433.CatNap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
