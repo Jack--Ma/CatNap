@@ -42,6 +42,7 @@
 		C499897F1D35D1280056DB6D /* pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = pop.mp3; path = CatNap/Resources/Sounds/pop.mp3; sourceTree = "<group>"; };
 		C49989801D35D1280056DB6D /* win.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = win.mp3; path = CatNap/Resources/Sounds/win.mp3; sourceTree = "<group>"; };
 		C49989891D35E95E0056DB6D /* Cat.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Cat.sks; sourceTree = "<group>"; };
+		C4D024D71D3723B6006A43A6 /* SpriteKitPhysicsTest.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SpriteKitPhysicsTest.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +59,7 @@
 		C49989561D35CDAF0056DB6D = {
 			isa = PBXGroup;
 			children = (
+				C4D024D71D3723B6006A43A6 /* SpriteKitPhysicsTest.playground */,
 				C49989611D35CDAF0056DB6D /* CatNap */,
 				C49989601D35CDAF0056DB6D /* Products */,
 			);
