@@ -24,7 +24,13 @@ let circle = SKSpriteNode(imageNamed: "circle")
 circle.name = "shape"
 circle.position = CGPoint(x: scene.size.width*0.5, y: scene.size.height*0.5)
 circle.physicsBody = SKPhysicsBody(circleOfRadius: circle.size.width/2)
+circle.physicsBody!.dynamic = false//false表示不收任何力的影响
 scene.addChild(circle)
+let circleMove = SKAction.repeatActionForever(SKAction.sequence([
+    SKAction.moveToX(0.0, duration: 1.0),
+    SKAction.moveToX(scene.size.width, duration: 1.0)
+    ]))
+circle.runAction(circleMove)
 
 let triangle = SKSpriteNode(imageNamed: "triangle")
 triangle.name = "shape"
@@ -57,6 +63,7 @@ func spawnSand() {
 }
 
 func shake() {
+    //applyImpulse强行改变node的速度
     scene.enumerateChildNodesWithName("sand") { (node, _) in
         node.physicsBody!.applyImpulse(CGVector(dx: 0, dy: random(min: 20, max: 40)))
     }
@@ -80,4 +87,27 @@ delay(seconds: 2.0) {
     )
     delay(seconds: 12, completion: shake)
 }
+
+var blowingRight = true
+var windForce = CGVector(dx: 50, dy: 0)
+extension SKScene {
+    func windWithTimer(timer: NSTimer) {
+        //applyForce为node加上一定的力
+        self.enumerateChildNodesWithName("sand") { (node, _) in
+            node.physicsBody!.applyForce(windForce)
+        }
+        self.enumerateChildNodesWithName("shape") { (node, _) in
+            node.physicsBody!.applyForce(windForce)
+        }
+    }
+    
+    func switchWindDiction(timer: NSTimer) {
+        blowingRight = !blowingRight
+        windForce = CGVector(dx: blowingRight ? 50 : -50, dy: 0)
+    }
+}
+
+NSTimer.scheduledTimerWithTimeInterval(0.05, target: scene, selector: #selector(SKScene.windWithTimer), userInfo: nil, repeats: true)
+NSTimer.scheduledTimerWithTimeInterval(3.0, target: scene, selector: #selector(SKScene.switchWindDiction), userInfo: nil, repeats: true)
+
 
