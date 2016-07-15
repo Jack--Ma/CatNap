@@ -7,6 +7,7 @@ import XCPlayground
 let sceneView = SKView(frame: CGRect(x: 0, y: 0, width: 480, height: 320))
 let scene = SKScene(size: CGSize(width: 480, height: 320))
 scene.physicsBody = SKPhysicsBody(edgeLoopFromRect: scene.frame)
+sceneView.showsPhysics = true
 sceneView.showsFPS = true
 sceneView.presentScene(scene)
 
@@ -37,6 +38,11 @@ CGPathAddLineToPoint(trianglePath, nil, -triangle.size.width/2, -triangle.size.h
 triangle.physicsBody = SKPhysicsBody(polygonFromPath: trianglePath)
 scene.addChild(triangle)
 
+let l = SKSpriteNode(imageNamed: "L")
+l.name = "shape"
+l.position = CGPoint(x: scene.size.width * 0.5, y: scene.size.height * 0.75)
+l.physicsBody = SKPhysicsBody(texture: l.texture!, size: l.size)
+scene.addChild(l)
 
 func spawnSand() {
     let sand = SKSpriteNode(imageNamed: "sand")
@@ -45,7 +51,20 @@ func spawnSand() {
                             y: scene.size.height - sand.size.height)
     sand.physicsBody = SKPhysicsBody(circleOfRadius: sand.size.width/2)
     sand.name = "sand"
+    sand.physicsBody!.restitution = 1
+    sand.physicsBody!.density = 20.0
     scene.addChild(sand)
+}
+
+func shake() {
+    scene.enumerateChildNodesWithName("sand") { (node, _) in
+        node.physicsBody!.applyImpulse(CGVector(dx: 0, dy: random(min: 20, max: 40)))
+    }
+    scene.enumerateChildNodesWithName("shape") { (node, _) in
+        node.physicsBody!.applyImpulse(CGVector(dx: random(min: 20, max: 60), dy: random(min: 20, max: 60)))
+    }
+    
+    delay(seconds: 3, completion: shake)
 }
 
 scene.physicsWorld.gravity = CGVector(dx: 0, dy: 0)
@@ -55,8 +74,10 @@ delay(seconds: 2.0) {
         SKAction.repeatAction(
             SKAction.sequence([
                 SKAction.runBlock(spawnSand),
-                SKAction.waitForDuration(0.2)]
+                SKAction.waitForDuration(0.1)]
             ), count: 100
         )
     )
+    delay(seconds: 12, completion: shake)
 }
+
