@@ -8,15 +8,32 @@
 
 import SpriteKit
 
+protocol CustomNodeEvents {
+    func didMoveToScene()
+}
+
 class GameScene: SKScene {
+    var bedNode: BedNode!
+    var catNode: CatNode!
+    
     override func didMoveToView(view: SKView) {
-        /* Setup your scene here */
-        let myLabel = SKLabelNode(fontNamed:"Chalkduster")
-        myLabel.text = "Hello, World!"
-        myLabel.fontSize = 45
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        let maxAspectRatio: CGFloat = 16.0/9.0
+        let maxAspectRatioHeight: CGFloat = size.width / maxAspectRatio
+        let playableMargin: CGFloat = (size.height - maxAspectRatioHeight) / 2.0
         
-        self.addChild(myLabel)
+        let playableRect = CGRect(x: 0.0, y: playableMargin, width: size.width, height: size.height - playableMargin*2)
+        
+        physicsBody = SKPhysicsBody(edgeLoopFromRect: playableRect)
+        
+        //找到所有结点
+        enumerateChildNodesWithName("//*") { (node, _) in
+            if let customNode = node as? CustomNodeEvents {
+                customNode.didMoveToScene()
+            }
+        }
+        
+        bedNode = childNodeWithName("bed") as! BedNode
+        catNode = childNodeWithName("//cat_body") as! CatNode
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
