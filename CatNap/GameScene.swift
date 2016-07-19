@@ -8,8 +8,19 @@
 
 import SpriteKit
 
+struct PhysicsCategory {
+    static let None:  UInt32 = 0b000
+    static let Cat:   UInt32 = 0b001
+    static let Block: UInt32 = 0b010
+    static let Bed:   UInt32 = 0b100
+}
+
 protocol CustomNodeEvents {
     func didMoveToScene()
+}
+
+protocol InteractiveNode {
+    func interact()
 }
 
 class GameScene: SKScene {
@@ -17,6 +28,8 @@ class GameScene: SKScene {
     var catNode: CatNode!
     
     override func didMoveToView(view: SKView) {
+        SKTAudio.sharedInstance().playBackgroundMusic("backgroundMusic.mp3")
+        
         let maxAspectRatio: CGFloat = 16.0/9.0
         let maxAspectRatioHeight: CGFloat = size.width / maxAspectRatio
         let playableMargin: CGFloat = (size.height - maxAspectRatioHeight) / 2.0
